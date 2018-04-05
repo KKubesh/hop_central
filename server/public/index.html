@@ -17,7 +17,11 @@
 
     <title>Hop Central</title>
 </head>
-<body>
-    <h1>Welcome to Hop Central</h1>
+<body ng-app="HopApp">
+    <h3>Welcome to Hop Central</h3>
+    <div ng-include=" '/views/templates/nav.html' "></div>
+    <main ng-view>
+        <!-- HTML left empty to be filled by view-->
+    </main>
 </body>
 </html>
