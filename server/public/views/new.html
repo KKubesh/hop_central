@@ -1,0 +1,45 @@
+<div layout="row" layout-align="center center">
+        <md-content>
+            <form name="projectForm">
+            
+                <div>
+                    <md-input-container flex>
+                        <label>Owner Name</label>
+                        <input required name="ownerName" maxlength="40" ng-model="owner.name">
+                        <div class="md-accent md-hue-1" ng-messages="projectForm.ownerName.$error">
+                            <div ng-message="required">You are missing the name.</div>
+                        </div>
+                        <!-- <div ng-message="md-maxlength">The description must be less than 40 characters long.</div> -->
+                    </md-input-container>
+                <div>
+    
+                </div>
+                    <md-input-container flex  class="md-primary md-hue-1">
+                        <label>Contact Information</label>
+                        <input name="type" maxlength="60" ng-model="owner.contact">
+                        <!-- <div ng-message="md-maxlength">The description must be less than 255 characters long.</div> -->
+                    </md-input-container>
+                </div>
+    
+                <md-input-container class="md-block">
+                        <md-switch class="md-primary md-hue-1" name="special" ng-model="rabbit.altered" required>
+                          Rabbit Altered
+                        </md-switch>
+                </md-input-container>
+            
+                <!-- <div>
+                    <md-input-container flex="50">
+                        <label>Project Type</label>
+                        <md-select name="type" ng-model="rabbit.owner_id" required>
+                            <md-option ng-repeat="rabbit in vm.rabbits.list" value="{{owner_id}}">{{owner.name}}</option>
+                        </md-select>
+                    </md-input-container>
+                </div> -->
+        
+                <div>
+                    <md-button class="md-accent md-hue-1 md-raised" type="submit">Add Owner</md-button>
+                </div>
+            
+            </form>
+        </md-content>
+    </div>

@@ -1,5 +1,5 @@
 app.controller('CheckController', ['HopService',
-function(CheckController) {
+function(HopService) {
     console.log('check in controller loaded');
-    
+
 }]);

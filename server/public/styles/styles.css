@@ -1,0 +1,33 @@
+.hopBanner {
+    background:#F4C8DD;
+    margin: 40px 0px;
+}
+
+.wfont {
+    font-family: 'Share', cursive;
+    color: white;
+}
+
+.borderline {
+    border: 10px solid #66c4be;
+    margin: -20px;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.navline {
+    border-right: 5px solid #96DAD6;
+    padding: 10px 30px;
+}
+
+.checkline {
+    border-right: 5px solid #96DAD6;
+    padding: 10px 40px 10px 30px;
+}
+
+a {
+    color:#96DAD6;
+    font-family: 'Share', cursive;
+    text-decoration: none;
+    font-size: 28px;
+}

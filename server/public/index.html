@@ -6,19 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/angular-material.css">
+    <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
     <script src="/vendors/angular.min.js"></script>
     <script src="/vendors/angular-route.js"></script>
+    <script src="/vendors/angular-material.min.js"></script>    
+    <script src="/vendors/angular-animate.min.js"></script>
+    <script src="/vendors/angular-aria.min.js"></script>
+    <script src="/vendors/angular-messages.min.js"></script>
     <script src="scripts/client.js"></script>
     <script src="scripts/services/hopcentral.service.js"></script>
     <script src="scripts/controllers/checkin.controller.js"></script>    
-    <script src="scripts/controllers/rabbits.controller.js"></script>    
+    <script src="scripts/controllers/rabbits.controller.js"></script>  
+    <script src="scripts/controllers/new.controller.js"></script>  
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" href="/favicon.ico">
 
     <title>Hop Central</title>
 </head>
 <body ng-app="HopApp">
-    <h3>Welcome to Hop Central</h3>
+    <div layout="row" layout-align="center center" class="hopBanner">
+        <img class="borderline" src="images/logo.jpg" height="220" width="220" alt="Hop Central Logo">
+    </div>
     <div ng-include=" '/views/templates/nav.html' "></div>
     <main ng-view>
         <!-- HTML left empty to be filled by view-->

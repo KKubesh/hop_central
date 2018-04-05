@@ -1,1 +1,13 @@
-<h1>This is where we list rabbits!</h1>
+<div layout="row" layout-align="center center">
+    <div>
+        <div class="float-left" ng-repeat="rabbit in vm.rab.list">
+            <h4>{{rabbit.name}}</h4>
+            <p>Description: {{rabbit.description}}</p>
+            <p>Altered: {{rabbit.altered}}</p>
+            <p>Checked In: {{rabbit.checked_in}}</p>
+            <p>Owner: {{rabbit.owner_id}}</p>
+            <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.removeRabbit(rabbit)">Delete</md-button>
+            <md-button class="md-primary md-hue-1 md-raised" ng-click="vm.removeRabbit(rabbit)">Check Out</md-button>
+        </div>
+    </div>
+</div>
