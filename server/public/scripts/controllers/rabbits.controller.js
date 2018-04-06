@@ -10,6 +10,7 @@ function(HopService) {
     self.getOwner = rabbitService.getOwner;
     self.getRab = rabbitService.getRab;
     self.addRab = rabbitService.addRab;
+    self.checkoutRab = rabbitService.checkoutRab;
 
     self.rab = rabbitService.rab;
 

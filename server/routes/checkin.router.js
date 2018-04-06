@@ -30,4 +30,18 @@ router.put('/:id', (req,res) =>{
     })
 })
 
+router.put('/checkout/:id', (req,res) =>{
+    console.log('PUT in checkin router', req.params.id);
+    const rab = req.body;
+    const id = req.params.id;
+    let queryText = `UPDATE "rabbit" SET "checked_in" = 'false' 
+                    WHERE "id" = $1;`;
+    pool.query(queryText, [id]).then((response) => {
+        res.sendStatus(201);
+    }).catch((err) => {
+        console.log('error in put checkin/checkout router', err);
+        res.sendStatus(500);
+    })
+})
+
 module.exports = router;

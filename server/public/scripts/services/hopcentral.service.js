@@ -70,6 +70,14 @@ function($http){
         })
     }
 
+    self.checkoutRab = function(rab) {
+        $http.put(`/checkin/checkout/${rab.id}`).then(function(response) {
+            self.getRab();
+        }).catch(function(err){
+            console.log('error in making put/checkout request/services', err);
+        })
+    }
+
     self.getRab();
     self.getOwner();
     // self.getRooms();
