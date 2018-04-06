@@ -14,7 +14,7 @@
             <md-input-container flex>
                 <label>Rabbit</label>
                 <md-select name="rabbitId" ng-model="vm.check.rabbit_id" required>
-                    <md-option ng-repeat="rabbit in vm.rab.list" value="{{rabbit.id}}">{{rabbit.name}}</option>
+                    <md-option ng-hide="rabbit.checked_in" ng-repeat="rabbit in vm.rab.list" value="{{rabbit.id}}">{{rabbit.name}} ({{rabbit.owner_name}})</option>
                 </md-select>
                 <div class="md-accent md-hue-1" ng-messages="checkForm.rabbitId.$error">
                     <div ng-message="required">You are missing the rabbit.</div>
