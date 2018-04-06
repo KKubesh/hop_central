@@ -1,13 +1,13 @@
-<div layout="row" layout-align="center center">
+<div layout="column" layout-align="center center">
     <div>
-        <div class="float-left" ng-repeat="rabbit in vm.rab.list">
-            <h4>{{rabbit.name}}</h4>
+        <div class="float-left smbox" ng-repeat="rabbit in vm.rab.list">
+            <h2>{{rabbit.name}}</h2>
             <p>Description: {{rabbit.description}}</p>
-            <p>Altered: {{rabbit.altered}}</p>
-            <p>Checked In: {{rabbit.checked_in}}</p>
-            <p>Owner: {{rabbit.owner_id}}</p>
-            <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.removeRabbit(rabbit)">Delete</md-button>
-            <md-button class="md-primary md-hue-1 md-raised" ng-click="vm.removeRabbit(rabbit)">Check Out</md-button>
+            <p ng-show="{{rabbit.altered}}">Hoppy Hour Friendly</p>
+            <p ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</p>
+            <p>Owner: {{rabbit.owner_name}}</p>
+            <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button>
+            <md-button class="md-primary md-hue-1 md-raised" ng-click="vm.checkRab(rabbit)">Check Out</md-button>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-let app = angular.module('HopApp', ['ngRoute', 'ngMaterial', 'ngMessages']);
+let app = angular.module('HopApp', ['ngRoute', 'ngMaterial', 'ngMessages', 'ngAnimate', 'ngAria']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     console.log('Route config loaded');

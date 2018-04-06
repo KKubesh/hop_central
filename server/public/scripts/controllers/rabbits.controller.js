@@ -1,11 +1,15 @@
 app.controller('RabController', ['HopService',
 function(HopService) {
-    console.log('rabbit controller loaded');
+    console.log('rabbit/guest controller loaded');
     let self = this;
 
     let rabbitService = HopService;
-    //initial get
+    //adding new rabbit
+    self.addRab = rabbitService.addRab;
+    self.delRab = rabbitService.delRab;
+    self.getOwner = rabbitService.getOwner;
     self.getRab = rabbitService.getRab;
+    self.addRab = rabbitService.addRab;
 
     self.rab = rabbitService.rab;
 
