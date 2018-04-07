@@ -1,26 +1,34 @@
-<div class="smbox"> In Progress </div>
-<!-- <div layout="column" layout-align="center center">
-    <div>
-        <table></table>
-        <div class="float-left smbox" ng-repeat="rabbit in vm.rab.list">
-            <h2>{{rabbit.name}}</h2>
-            <p>Description: {{rabbit.description}}</p>
-            <p ng-show="{{rabbit.altered}}">Hoppy Hour Friendly</p>
-            <p ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</p>
-            <p>Owner: {{rabbit.owner_name}}</p>
-            <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button>
-        </div>
-    </div>
+<div class="smbox">
+  <div layout="column" layout-align="center center">
+      <div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Description</th><th>H/H Friendly</th><th>Owner</th><th>Delete</th></tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="rabbit in vm.rab.list"><td>{{rabbit.name}}</td><td>{{rabbit.description}}</td><td ng-show="{{rabbit.altered}}">Hoppy Hour Friendly</td><td ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</td><td>{{rabbit.owner_name}}</td><td><md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button></td></tr>
+          </tbody>
+          <!-- <div class="float-left smbox" ng-repeat="rabbit in vm.rab.list">
+              <h2>{{rabbit.name}}</h2>
+              <p>Description: {{rabbit.description}}</p>
+              <p ng-show="{{rabbit.altered}}">Hoppy Hour Friendly</p>
+              <p ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</p>
+              <p>Owner: {{rabbit.owner_name}}</p>
+              <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button>
+          </div> -->
+        </table>
+      </div>
+  </div>
 </div>
-
+<!-- <md-content>
 <div class="example-container mat-elevation-z8">
-        <mat-table #table [dataSource]="dataSource">
+        <mat-table ng-repeat="rabbit in vm.rab.list"> -->
       
           <!-- Name Column -->
           <!-- <ng-container matColumnDef="rabName">
             <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{rabbit.name}} </mat-cell>
-          </ng-container>
+          </ng-container> -->
       
           <!-- Description Column -->
           <!-- <ng-container matColumnDef="description">
@@ -43,4 +51,5 @@
                        [pageSizeOptions]="[5, 10, 20]"
                        [showFirstLastButtons]="true">
         </mat-paginator>
-</div> -->
+</div>
+</md-content> -->
