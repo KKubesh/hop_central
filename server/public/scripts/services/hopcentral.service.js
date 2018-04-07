@@ -33,8 +33,9 @@ function($http){
     self.addOwner = function(owner) {
         console.log('adding owner called in service');
             $http.post('/new', owner).then(function(response) {
-            console.log('Owner successfully added', owner);
-            self.getOwner();
+                console.log('Owner successfully added', owner);
+                alert('You added a new owner!');
+                self.getOwner();
         }).catch(function(err) {
             console.log('error in addOwner Service', err);
         })
@@ -45,6 +46,7 @@ function($http){
         console.log('checkin rabbit in!');
             $http.post('/checkin', rab).then(function(response) {
                 console.log('Rabbit successfully checked in', rab);
+                alert('You added a new rabbit!');
                 self.getRab();
                 self.getOwner();               
             }).catch(function(err){
@@ -66,6 +68,7 @@ function($http){
     // function that checks out rabbits upon pick-up
     self.checkRab = function(rab) {
         $http.put(`/checkin/${rab.rabbit_id}`).then(function(response) {
+            alert('Rabbit checked in!');
             self.getRab();
         }).catch(function(err){
             console.log('error in making put request/services', err);
