@@ -4,14 +4,13 @@ function(HopService) {
     let self = this;
 
     let newService = HopService;
-
+    // functions used to display content and button events    
     self.addOwner = newService.addOwner;
     self.addRab = newService.addRab;
-    self.delRab = newService.delRab;
     self.getOwner = newService.getOwner;
     self.getRab = newService.getRab;
-    self.addRab = newService.addRab;
-
+    // information being between via functions above    
     self.own = newService.own;
     self.rabbit = {altered: false};
+
 }]);

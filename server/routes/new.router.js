@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const pool = require('../modules/pool');
 
+// function adds in the owners to owner table
 router.post('/', (req,res) => {
     console.log('owner ADD in router called');
     console.log(req.body);
@@ -11,15 +12,13 @@ router.post('/', (req,res) => {
         const responseArray = result.rows;
         console.log(responseArray);
         res.send(result.rows);
-        
     }).catch( (err) => {
         console.log('Error on POST in new Router', err);
         res.sendStatus(500);
     });
 });
 
-
-
+// function gets the names of the owners and joins rabbits
 router.get('/', (req,res) => {
     console.log('owner GET in router called');
     let owner = req.body;

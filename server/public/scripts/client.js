@@ -13,6 +13,9 @@ app.config(['$routeProvider', function ($routeProvider) {
     }).when('/checkin', {
       templateUrl: '/views/checkin.html',
       controller: 'CheckController as vm'
+    }).when('/colony', {
+      templateUrl: '/views/colony.html',
+      controller: 'ColonyController as vm'
     }).otherwise(
       { redirectTo: '/rabbits'} // any other route it will send it back to rabbits
     )

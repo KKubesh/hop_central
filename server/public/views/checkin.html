@@ -2,6 +2,16 @@
     <md-content class="smbox">
         <form name="checkForm">
             <md-input-container flex>
+                <label>Rabbit</label>
+                <md-select name="rabbitId" ng-model="vm.check.rabbit_id" required>
+                    <md-option ng-hide="rabbit.checked_in" ng-repeat="rabbit in vm.rab.list" value="{{rabbit.id}}">{{rabbit.name}} ({{rabbit.owner_name}})</option>
+                </md-select>
+                <div class="md-accent md-hue-1" ng-messages="checkForm.rabbitId.$error">
+                    <div ng-message="required">You are missing the rabbit.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container flex>
                 <label>Owner</label>
                 <md-select name="checkOwner" ng-model="vm.check.owner_id" required>
                     <md-option ng-repeat="owner in vm.own.list" value="{{owner.id}}">{{owner.name}}</option>
@@ -11,18 +21,10 @@
                 </div>
             </md-input-container>
 
-            <md-input-container flex>
-                <label>Rabbit</label>
-                <md-select name="rabbitId" ng-model="vm.check.rabbit_id" required>
-                    <md-option ng-hide="rabbit.checked_in" ng-repeat="rabbit in vm.rab.list" value="{{rabbit.id}}">{{rabbit.name}} ({{rabbit.owner_name}})</option>
-                </md-select>
-                <div class="md-accent md-hue-1" ng-messages="checkForm.rabbitId.$error">
-                    <div ng-message="required">You are missing the rabbit.</div>
-                </div>
-            </md-input-container>
             <div>
                 <md-button class="md-primary md-hue-1 md-raised" type="submit" ng-click="vm.checkRab(vm.check)">Check In Rabbit</md-button>
             </div>
+            
         </form>    
     </md-content>
 </div>

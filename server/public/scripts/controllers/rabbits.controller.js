@@ -5,13 +5,10 @@ function(HopService) {
 
     let rabbitService = HopService;
     //adding new rabbit
-    self.addRab = rabbitService.addRab;
     self.delRab = rabbitService.delRab;
-    self.getOwner = rabbitService.getOwner;
     self.getRab = rabbitService.getRab;
-    self.addRab = rabbitService.addRab;
     self.checkoutRab = rabbitService.checkoutRab;
-
+    // information being sent between via functions above    
     self.rab = rabbitService.rab;
 
 }]);

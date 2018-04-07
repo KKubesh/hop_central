@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const pool = require('../modules/pool');
 
+// function gets the rabbits and joins owners
 router.get('/', (req, res) => {
     console.log('GET /rabbits & owner');
     const queryText = `SELECT "r"."name", 
@@ -19,6 +20,7 @@ router.get('/', (req, res) => {
     });
 });
 
+// deletes rabbits all together
 router.delete('/:id', (req,res) => {
     console.log('DELETE /rabbits in router');
     let id = req.params.id;

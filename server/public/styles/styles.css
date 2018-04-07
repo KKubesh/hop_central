@@ -1,25 +1,24 @@
+/* banner ribbon */
 .hopBanner {
     background:#F4C8DD;
     margin: 40px 0px;
     padding: 10px;
 }
 
+/* used as a vertical filler */
 .vbreak {
     margin: 10px;
 }
 
-.wfont {
-    font-family: 'Share', cursive;
-    color: white;
-}
-
-.borderline {
+/* border and shadow on logo */
+.borderlogo {
     border: 10px solid #66c4be;
     margin: -20px;    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
 }
 
+/* standard content wrap */
 .smbox {
     border: 5px solid #96DAD6; 
     margin: 20px;
@@ -29,40 +28,35 @@
     background: #e8fcfb;
 }
 
-.navline {
-    border-right: 5px solid #96DAD6;
-    padding: 10px 30px;
-}
-
-.checkline {
-    border-right: 5px solid #96DAD6;
-    padding: 10px 40px 10px 30px;
-}
-
+/* adjusted title font */
 h2 {
     color:#7CC2BE;
     font-family: 'Share', cursive;
     font-size: 28px;
 }
 
+/* standard font used in boxes */
 .st {
     color:#7CC2BE;
     font-family: 'Share', cursive;
     font-size: 20px;
 }
 
+/* warning/notice text with accent color */
 .wrn {
     color:#B52D61;
     font-family: 'Share', cursive;
     text-decoration: none;
 }
 
+/* small warning/notice text with accent color */
 small {
     color:#B52D61;
     font-family: 'Share', cursive;
     text-decoration: none;
 }
 
+/* remove high contrast black lettering */
 p {
     color: grey;
     font-size: 20px;

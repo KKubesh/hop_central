@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const pool = require('../modules/pool');
 
+// creating a new rabbit on the rabbit table
 router.post('/', (req,res) => {
     let rabbit = req.body;
     console.log('rabbit ADD in router called');
@@ -16,6 +17,7 @@ router.post('/', (req,res) => {
     });
 });
 
+// checking in the rabbit
 router.put('/:id', (req,res) =>{
     console.log('PUT in checkin router', req.params.id);
     const rab = req.body;
@@ -30,6 +32,7 @@ router.put('/:id', (req,res) =>{
     })
 })
 
+// checking out the rabbit
 router.put('/checkout/:id', (req,res) =>{
     console.log('PUT in checkin router', req.params.id);
     const rab = req.body;
