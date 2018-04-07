@@ -2,7 +2,8 @@
     <md-content class="smbox">
         <form name="ownerForm">
             <h2>New Owner</h2>
-            <p><small>*Add Owner First</small></p>
+            <small>*Add Owner First</small>
+
             <div>
                 <md-input-container flex>
                     <label>Owner Name</label>
@@ -35,54 +36,64 @@
     <div class="vbreak"></div>
 
     <md-content class="smbox">
-            <form name="rabbitForm">
-                <h2>New Rabbit</h2>
-                <div>
-                    <md-input-container flex>
-                        <label>Rabbit Name</label>
-                        <input required name="rabbitName" maxlength="40" ng-model="vm.rabbit.name">
-                        <div class="md-accent" ng-messages="rabbitForm.rabbitName.$error">
-                            <div ng-message="required">You are missing the name.</div>
-                        </div>
-                        <!-- <div ng-message="md-maxlength">The description must be less than 40 characters long.</div> -->
-                    </md-input-container>
-                <div>
-    
-                </div>
-                    <md-input-container flex  class="md-primary md-hue-1">
-                        <label>Brief Description</label>
-                        <input name="type" maxlength="255" ng-model="vm.rabbit.description">
-                        <!-- <div ng-message="md-maxlength">The description must be less than 255 characters long.</div> -->
-                    </md-input-container>
-                </div>
+        <form name="rabbitForm">
+            <h2>New Rabbit</h2>
+            <!-- <div>
+                <md-input-container flex>
+                    <label>Rabbit Photo</label>
+                    <input required name="rabbitPhoto" maxlength="40" ng-model="vm.rabbit.photo">
+                    <div class="md-accent" ng-messages="rabbitForm.rabbitPhoto.$error">
+                        <div ng-message="required">You are missing the photo.</div>
+                    </div>
+                </md-input-container>
+            </div> -->
+                
+            <div>
+                <md-input-container flex>
+                    <label>Rabbit Name</label>
+                    <input required name="rabbitName" maxlength="40" ng-model="vm.rabbit.name">
+                    <div class="md-accent" ng-messages="rabbitForm.rabbitName.$error">
+                        <div ng-message="required">You are missing the name.</div>
+                    </div>
+                    <!-- <div ng-message="md-maxlength">The description must be less than 40 characters long.</div> -->
+                </md-input-container>
+            </div>
 
-                <div>
-                    <md-input-container class="md-block">
-                        <md-switch class="md-primary md-hue-1" name="special" ng-model="vm.rabbit.altered">
-                            <p class="st">
-                                Hoppy Hour 
-                                <br>
-                                Friendly
-                            </p>
-                        </md-switch>
-                    </md-input-container>
-                </div>    
-                <div>
-                    <md-input-container flex>
-                        <label>Owner</label>
-                        <md-select name="rabbitOwner" ng-model="vm.rabbit.owner_id" required>
-                            <md-option ng-repeat="owner in vm.own.list" value="{{owner.id}}">{{owner.name}}</option>
-                        </md-select>
-                        <div class="md-accent md-hue-1" ng-messages="rabbitForm.rabbitOwner.$error">
-                            <div ng-message="required">You are missing the owner.</div>
-                        </div>
-                    </md-input-container>
-                </div>
+            <div>
+                <md-input-container flex  class="md-primary md-hue-1">
+                    <label>Brief Description</label>
+                    <input name="type" maxlength="255" ng-model="vm.rabbit.description">
+                    <!-- <div ng-message="md-maxlength">The description must be less than 255 characters long.</div> -->
+                </md-input-container>
+            </div>
+
+            <div>
+                <md-input-container class="md-block">
+                    <md-switch class="md-primary md-hue-1" name="special" ng-model="vm.rabbit.altered">
+                        <p class="st">
+                            Hoppy Hour 
+                            <br>
+                            Friendly
+                        </p>
+                    </md-switch>
+                </md-input-container>
+            </div>    
+            <div>
+                <md-input-container flex>
+                    <label>Owner</label>
+                    <md-select name="rabbitOwner" ng-model="vm.rabbit.owner_id" required>
+                        <md-option ng-repeat="owner in vm.own.list" value="{{owner.id}}">{{owner.name}}</option>
+                    </md-select>
+                    <div class="md-accent md-hue-1" ng-messages="rabbitForm.rabbitOwner.$error">
+                        <div ng-message="required">You are missing the owner.</div>
+                    </div>
+                </md-input-container>
+            </div>
+    
+            <div>
+                <md-button class="md-accent md-hue-1 md-raised" type="submit" ng-click="vm.addRab(vm.rabbit)">Add Rabbit</md-button>
+            </div>
         
-                <div>
-                    <md-button class="md-accent md-hue-1 md-raised" type="submit" ng-click="vm.addRab(vm.rabbit)">Add Rabbit</md-button>
-                </div>
-            
-            </form>
-        </md-content>
+        </form>
+    </md-content>
 </div>

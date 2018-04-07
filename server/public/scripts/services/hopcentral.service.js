@@ -34,7 +34,15 @@ function($http){
         console.log('adding owner called in service');
             $http.post('/new', owner).then(function(response) {
                 console.log('Owner successfully added', owner);
-                alert('You added a new owner!');
+                swal({
+                    title: "New Owner!", 
+                    text: "You added a new owner!",
+                    button: "OK",
+                    className: "hopBanner",
+                    button: {
+                        className: "albutton"
+                    },
+                });
                 self.getOwner();
         }).catch(function(err) {
             console.log('error in addOwner Service', err);
@@ -46,7 +54,15 @@ function($http){
         console.log('checkin rabbit in!');
             $http.post('/checkin', rab).then(function(response) {
                 console.log('Rabbit successfully checked in', rab);
-                alert('You added a new rabbit!');
+                swal({
+                    title: "New rabbit!", 
+                    text: "You added a new rabbit!",
+                    button: "OK",
+                    className: "hopBanner",
+                    button: {
+                        className: "albutton"
+                    },
+                });
                 self.getRab();
                 self.getOwner();               
             }).catch(function(err){
@@ -56,19 +72,38 @@ function($http){
 
     // function that deletes rabbits from the database
     self.delRab = function(rab) {
-        console.log('called delRab in service', rab);
-        $http.delete('/rabbits/' + rab.id).then(function(response){
-            console.log(response);
-            self.getRab();
-        }).catch(function(err){
-            console.log('Error in delRab service'. err);            
-        })
+        let rabbit = rab;
+        swal({
+            title: "You sure you want to delete the rabbit?", 
+            text: "You cannot undo!",
+            className: "hopBanner",
+            buttons: {
+                cancel: true,
+                confirm: true
+             }
+        }).then(function(isConfirm) {
+            if (isConfirm == true) {
+                $http.delete('/rabbits/' + rabbit.id).then(function(response){
+                    console.log(response);
+                    self.getRab();
+                }).catch(function(err){
+                    console.log('Error in delRab service'. err);            
+                })
+            }
+        })        
     }
 
     // function that checks out rabbits upon pick-up
     self.checkRab = function(rab) {
         $http.put(`/checkin/${rab.rabbit_id}`).then(function(response) {
-            alert('Rabbit checked in!');
+            swal({
+                title: "Rabbit Checked In!",
+                button: "OK",
+                className: "hopBanner",
+                button: {
+                    className: "albutton"
+                },
+            });
             self.getRab();
         }).catch(function(err){
             console.log('error in making put request/services', err);
