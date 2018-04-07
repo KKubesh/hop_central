@@ -64,6 +64,15 @@ function($http){
     }
 
     // function that checks out rabbits upon pick-up
+    self.checkRab = function(rab) {
+        $http.put(`/checkin/${rab.id}`).then(function(response) {
+            self.getRab();
+        }).catch(function(err){
+            console.log('error in making put/checkout request/services', err);
+        })
+    }
+
+    // function that checks out rabbits upon pick-up
     self.checkoutRab = function(rab) {
         $http.put(`/checkin/checkout/${rab.id}`).then(function(response) {
             self.getRab();
