@@ -27,7 +27,7 @@
             </div>
     
             <div>
-                <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.addOwner(owner)">Add Owner</md-button>
+                <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.addOwner(owner)" ng-disabled="ownerForm.$invalid">Add Owner</md-button>
             </div>
         
         </form>
@@ -91,7 +91,7 @@
             </div>
     
             <div>
-                <md-button class="md-accent md-hue-1 md-raised" type="submit" ng-click="vm.addRab(vm.rabbit)">Add Rabbit</md-button>
+                <md-button class="md-accent md-hue-1 md-raised" type="submit" ng-click="vm.addRab(vm.rabbit)" ng-disabled="rabbitForm.$invalid">Add Rabbit</md-button>
             </div>
         
         </form>

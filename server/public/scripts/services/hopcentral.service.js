@@ -36,7 +36,7 @@ function($http){
                 console.log('Owner successfully added', owner);
                 swal({
                     title: "New Owner!", 
-                    text: "You added a new owner!",
+                    text: `You added ${owner.name}!`,
                     button: "OK",
                     className: "hopBanner",
                     button: {
@@ -51,12 +51,12 @@ function($http){
 
     //function that adds new rabbits
     self.addRab = function(rab) {
-        console.log('checkin rabbit in!');
+        console.log('checkin rabbit in!', rab);
             $http.post('/checkin', rab).then(function(response) {
                 console.log('Rabbit successfully checked in', rab);
                 swal({
                     title: "New rabbit!", 
-                    text: "You added a new rabbit!",
+                    text: `You added ${rab.name}!`,
                     button: "OK",
                     className: "hopBanner",
                     button: {
@@ -72,9 +72,8 @@ function($http){
 
     // function that deletes rabbits from the database
     self.delRab = function(rab) {
-        let rabbit = rab;
         swal({
-            title: "You sure you want to delete the rabbit?", 
+            title: `You sure you want to delete ${rab.name}`, 
             text: "You cannot undo!",
             className: "hopBanner",
             buttons: {
@@ -83,13 +82,13 @@ function($http){
              }
         }).then(function(isConfirm) {
             if (isConfirm == true) {
-                $http.delete('/rabbits/' + rabbit.id).then(function(response){
+                $http.delete('/rabbits/' + rab.id).then(function(response){
                     console.log(response);
                     self.getRab();
-                }).catch(function(err){
-                    console.log('Error in delRab service'. err);            
-                })
-            }
+        }).catch(function(err){
+            console.log('Error in delRab service'. err);            
+            })
+        }
         })        
     }
 
@@ -97,7 +96,7 @@ function($http){
     self.checkRab = function(rab) {
         $http.put(`/checkin/${rab.rabbit_id}`).then(function(response) {
             swal({
-                title: "Rabbit Checked In!",
+                title: `Rabbit Checked In!`,
                 button: "OK",
                 className: "hopBanner",
                 button: {
@@ -112,11 +111,23 @@ function($http){
 
     // function that checks out rabbits upon pick-up
     self.checkoutRab = function(rab) {
-
-        $http.put(`/checkin/checkout/${rab.id}`).then(function(response) {
-            self.getRab();
+        let rabbit = rab;
+        swal({
+            title: `You sure you want to check out ${rabbit.name}?`, 
+            text: "You cannot undo!",
+            className: "hopBanner",
+            buttons: {
+                cancel: true,
+                confirm: true
+             }
+        }).then(function(isConfirm) {
+            if (isConfirm == true) {
+                $http.put(`/checkin/checkout/${rabbit.id}`).then(function(response) {
+                self.getRab();
         }).catch(function(err){
             console.log('error in making put/checkout request/services', err);
+            })
+            }
         })
     }
 
