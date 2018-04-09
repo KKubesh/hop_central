@@ -26,7 +26,6 @@ function($http){
         }).catch(function(err){
             console.log('error in getOwner', err);
         })
-        
     }
 
     // function that adds new owners
@@ -92,6 +91,37 @@ function($http){
         })        
     }
 
+        // function that deletes rabbits from the database
+        self.delOwner = function(own) {
+            swal({
+                title: `You sure you want to delete ${own.name}`, 
+                text: "You cannot undo!",
+                className: "hopBanner",
+                buttons: {
+                    cancel: true,
+                    confirm: true
+                 }
+            }).then(function(isConfirm) {
+                if (isConfirm == true) {
+                    $http.delete('/new/' + own.id).then(function(response){
+                        console.log(response);
+                        self.getOwner();
+            }).catch(function(err){
+                swal({
+                    title: `It appears ${own.name} currently is the owner of a rabbit`, 
+                    text: "You cannot delete until the rabbit is deleted first",
+                    className: "hopBanner",
+                    buttons: {
+                        cancel: true,
+                        confirm: true
+                     }
+                })
+                console.log('Error in delRab service'. err);            
+                })
+            }
+            })        
+        }
+
     // function that checks out rabbits upon pick-up
     self.checkRab = function(rab) {
         $http.put(`/checkin/${rab.rabbit_id}`).then(function(response) {
@@ -131,6 +161,38 @@ function($http){
         })
     }
 
+    self.eName = function(rab) {
+        console.log('edit profile function');
+        let rabbit = rab;
+        swal({
+            title: `Edit ${rabbit.name}'s Name`, 
+            text: "Name:",
+            content: {
+                element: "input",
+                attributes: {
+                    placeholder: "Edit Name",
+                    type: "name",
+                },
+            },
+            className: "hopBanner",
+            buttons: {
+                cancel: true,
+                confirm: true
+             }
+        }).then(function(isConfirm) {
+            console.log('this is isConfirm', isConfirm);
+            
+            if (isConfirm == true) {
+                $http.put(`/rabbits/${rabbit.id}`).then(function(response) {
+                self.getRab();
+        }).catch(function(err){
+            console.log('error in making put/checkout request/services', err);
+            })
+            }
+        })
+    }
+        
+    
     // functions are run for page load gathering existing data
     self.getRab();
     self.getOwner();

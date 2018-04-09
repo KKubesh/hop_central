@@ -10,17 +10,7 @@
                     <div ng-message="required">You are missing the rabbit.</div>
                 </div>
             </md-input-container>
-
-            <!-- <md-input-container flex>
-                <label>Owner</label>
-                <md-select name="checkOwner" ng-model="vm.check.owner_id" required>
-                    <md-option ng-repeat="owner in vm.own.list" value="{{owner.id}}">{{owner.name}}</option>
-                </md-select>
-                <div class="md-accent md-hue-1" ng-messages="checkForm.checkOwner.$error">
-                    <div ng-message="required">You are missing the owner.</div>
-                </div>
-            </md-input-container> -->
-
+            
             <div>
                 <md-button class="md-primary md-hue-1 md-raised" type="submit" ng-click="vm.checkRab(vm.check)" ng-disabled="checkForm.$invalid">Check In Rabbit</md-button>
             </div>

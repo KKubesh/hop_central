@@ -1,12 +1,23 @@
-<div class="smbox">
-  <div layout="column" layout-align="center center">      
-    <table>
-      <thead>
-        <tr><th>Name</th><th width="200">Description</th><th>H/H Friendly</th><th width="200">Owner</th><th>Delete</th></tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="rabbit in vm.rab.list"><td>{{rabbit.name}}</td><td>{{rabbit.description}}</td><td class="st" ng-show="{{rabbit.altered}}">Friendly</td><td ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</td><td>{{rabbit.owner_name}}</td><td><md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button></td></tr>
-      </tbody>
-    </table>      
+<md-content layout="column"  layout-align="center center">
+  <div class="smbox" >
+    <div>      
+      <table>
+        <thead>
+          <tr><th>Name</th><th width="200">Description</th><th>H/H Friendly</th><th width="200">Owner</th><th>Delete</th></tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="rabbit in vm.rab.list"><td>{{rabbit.name}}</td><td>{{rabbit.description}}</td><td class="st" ng-show="{{rabbit.altered}}">Friendly</td><td ng-hide="{{rabbit.altered}}" class="wrn">No Hoppy Hour</td><td>{{rabbit.owner_name}}</td><td><md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delRab(rabbit)">Delete</md-button></td></tr>
+        </tbody>
+      </table>      
+    </div>
   </div>
-</div>
+
+  <div class="smbox colonywidth">
+    <div layout="row" layout-wrap layout-align="center center">      
+      <div class="border-owner" ng-repeat="owner in vm.own.list">
+        <p>{{owner.name}} <br>{{owner.contact}}</p>
+        <md-button class="md-accent md-hue-1 md-raised" ng-click="vm.delOwner(owner)">Delete</md-button>
+      </div>
+    </div>      
+  </div>
+</md-content>
