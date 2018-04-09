@@ -18,6 +18,16 @@
     text-align: center;
 }
 
+/* owner fixed box size */
+.border-owner {
+    border: 5px solid #66c4be;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    height: 200px;
+    width: 180px;
+}
+
 /* standard content wrap */
 .smbox {
     border: 5px solid #96DAD6; 
@@ -80,4 +90,14 @@ thead {
 }
 td {
     border-bottom: solid 1px grey;
+}
+
+/* edit icon color */
+.icon-teal {
+    color: #7CC2BE;
+}
+
+/* adjusted width of owners list */
+.colonywidth {
+    width: 752px;
 }

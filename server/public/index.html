@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/angular-material.css">
     <link href="https://fonts.googleapis.com/css?family=Share" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/vendors/angular.min.js"></script>
     <script src="/vendors/angular-route.js"></script>
     <script src="/vendors/angular-animate.min.js"></script>
@@ -31,7 +32,7 @@
         <img class="borderlogo" src="images/logo.jpg" height="220" width="220" alt="Hop Central Logo">
     </div>
     <div ng-include=" '/views/templates/nav.html' "></div>
-    <main ng-view>
+    <main ng-view layout-align="center center">
         <!-- HTML left empty to be filled by view-->
     </main>
 </body>

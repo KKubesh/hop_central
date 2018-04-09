@@ -34,4 +34,19 @@ router.get('/', (req,res) => {
     })
 })
 
+// deletes owner
+router.delete('/:id', (req,res) => {
+    console.log('DELETE /rabbits in router');
+    let id = req.params.id;
+    console.log(id);
+    let rab = req.body;
+    const queryText = `DELETE FROM "owner" WHERE "id" = $1;`
+    pool.query(queryText, [id]).then((response) => {
+        console.log(response);
+        res.sendStatus(201);
+    }).catch((err) => {
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;

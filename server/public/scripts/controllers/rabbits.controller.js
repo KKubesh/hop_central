@@ -4,10 +4,14 @@ function(HopService) {
     let self = this;
 
     let rabbitService = HopService;
-    //adding new rabbit
+    //functions used in /rabbits
     self.delRab = rabbitService.delRab;
     self.getRab = rabbitService.getRab;
     self.checkoutRab = rabbitService.checkoutRab;
+    self.eName = rabbitService.eName;
+    self.eDescription = rabbitService.eDescription;
+    self.eHopHour = rabbitService.eHopHour;
+    self.eOwner = rabbitService.eOwner;
     // information being sent between via functions above    
     self.rab = rabbitService.rab;
 
